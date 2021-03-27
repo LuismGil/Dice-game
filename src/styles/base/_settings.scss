@@ -1,0 +1,6 @@
+$color-primary: #222222;
+$color-secundary: #00d8ff;
+$color-white: #ffffff;
+$color-error: #da1b22;
+$color-background: mix($color-white, $color-primary, 95%) !default;
+$color-text: scale-color($color-background, $lightness: -65%) !default;

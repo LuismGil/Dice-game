@@ -1,0 +1,191 @@
+.player {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex: 50%;
+  margin: 10px;
+  padding: 20px 10px;
+  padding-bottom: 10px;
+  transition: all 0.75s;
+
+  &--active {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  &--active .name {
+    font-weight: 700;
+  }
+
+  &--active .score {
+    font-weight: 400;
+  }
+
+  &--active .current {
+    opacity: 1;
+  }
+}
+
+.name {
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  position: relative;
+  text-transform: uppercase;
+  word-spacing: 2px;
+}
+
+.score {
+  color: $color-text;
+  font-size: 50px;
+  font-weight: 300;
+  margin-bottom: auto;
+}
+
+.current {
+  background-color: $color-primary;
+  border-radius: 9px;
+  color: $color-white;
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  transition: all 0.75s;
+
+  &-label {
+    color: $color-white;
+    font-size: 17px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+  }
+}
+
+.current .current-score {
+  font-size: 35px;
+}
+
+.btn {
+  backdrop-filter: blur(10px);
+  background-color: $color-white;
+  background: none;
+  border: none;
+  box-shadow: 0 17px 20px rgba(0, 0, 0, 0.1);
+  color: $color-primary;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 400;
+  left: 50%;
+  padding: 7px 10px;
+  position: absolute;
+  text-transform: uppercase;
+  transform: translateX(-50%);
+  transition: all 0.2s;
+
+  &::first-letter {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 7px;
+  }
+
+  &--new {
+    top: 270px;
+  }
+
+  &--roll {
+    top: 330px;
+  }
+
+  &--hold {
+    top: 390px;
+  }
+
+  &:active {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translate(-50%, 3px);
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.dice {
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+  height: 80px;
+  left: 50%;
+  position: absolute;
+  top: 140px;
+  transform: translateX(-50%);
+}
+
+.player--winner {
+  background-color: $color-secundary;
+}
+
+.player--winner .name {
+  font-weight: 700;
+  color: $color-primary;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 991px) {
+  .player {
+    margin: 0;
+    padding: 100px;
+  }
+
+  .name {
+    font-size: 30px;
+  }
+
+  .btn {
+    &--new {
+      top: 70px;
+    }
+  }
+
+  .dice {
+    height: 100px;
+    top: 160px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .player {
+    margin: 0;
+    padding: 90px;
+  }
+
+  .name {
+    font-size: 40px;
+  }
+
+  .score {
+    font-size: 80px;
+  }
+
+  .btn {
+    padding: 7px 20px;
+    position: absolute;
+
+    &--new {
+      top: 40px;
+    }
+
+    &--roll {
+      top: 390px;
+    }
+
+    &--hold {
+      top: 460px;
+    }
+  }
+
+  .dice {
+    height: 100px;
+    top: 160px;
+  }
+}
